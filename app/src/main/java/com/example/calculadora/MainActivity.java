@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,9 +11,18 @@ public class MainActivity extends AppCompatActivity {
     TextView escritura,resultado;
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bPunto;
     Button sumar,restar,multiplicar,dividir,igual;
-    Button potencia,raiz,porcentaje,clearAll,borrar;
+    Button potencia,raiz,porcentaje,borrar;
+    Button seno,coseno,tangente,logaritmo,phi;
     float numFinal,num1,num2;
     int operador;
+    double resFunction;
+
+    public void operations(){
+        String aux=escritura.getText().toString();
+        num1=Float.parseFloat(aux);
+        escritura.setText("");
+        aux="";
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,9 +49,13 @@ public class MainActivity extends AppCompatActivity {
         restar= findViewById(R.id.restar);
         multiplicar= findViewById((R.id.multiplicar));
         dividir=findViewById(R.id.dividir);
-        clearAll = findViewById(R.id.clearAll);
         borrar= findViewById(R.id.borrar);
         igual= findViewById(R.id.igual);
+        seno= findViewById(R.id.seno);
+        coseno= findViewById(R.id.coseno);
+        tangente= findViewById(R.id.tangente);
+        logaritmo= findViewById(R.id.logaritmo);
+        phi= findViewById(R.id.phi);
 
         if(escritura.getText().equals("") || resultado.equals("")){
             escritura.setText("");
@@ -104,25 +115,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String aux = escritura.getText().toString();
-                if (aux.contains(".")){
-                    try {} catch (NumberFormatException nfe){}
-                    System.out.println("error: ");
-                }
-                else {
-                    escritura.setText(aux+".");
-                }
+            if (aux.contains(".")){
+                try {} catch (NumberFormatException nfe){}
             }
-        });
-
-        clearAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String aux=escritura.getText().toString();
-                aux="";
-                escritura.setText("");
-                resultado.setText("");
-                operador=0; } });
-        System.out.println("aux"+"aux");
+            else {
+                escritura.setText(aux+".");  }
+            }});
 
         borrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,9 +129,19 @@ public class MainActivity extends AppCompatActivity {
                     String aux=escritura.getText().toString();
                     if (!aux.isEmpty()) {
                         aux=aux.substring(0,aux.length()-1);
-                        escritura.setText(aux);                    }
+                        escritura.setText(aux); }
                 } catch (NumberFormatException nfe){
-                    System.out.println("error: " + nfe);                }
+                    System.out.println("error: " + nfe);}
+            }
+        });
+        borrar.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                String aux="";
+                escritura.setText("");
+                resultado.setText("");
+                operador=0;
+                return true;
             }
         });
 
@@ -142,12 +150,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     String aux=escritura.getText().toString();
-                    String aux1;
-                    aux1="+";
-                    num1=Float.parseFloat(aux);
-                    escritura.setText("");
+                    String aux1 ="+";
+                    operations();
                     resultado.setText(aux+aux1);
-                    aux="";
                     operador=1;
                 } catch (NumberFormatException nfe){}
             }
@@ -157,12 +162,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try{
                     String aux=escritura.getText().toString();
-                    String aux1;
-                    aux1="-";
-                    num1=Float.parseFloat(aux);
-                    escritura.setText("");
+                    String aux1="-";
+                    operations();
                     resultado.setText(aux+aux1);
-                    aux="";
                     operador=2;
                 } catch (NumberFormatException nfe){}
             }
@@ -172,12 +174,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     String aux=escritura.getText().toString();
-                    String aux1;
-                    aux1="x";
-                    num1=Float.parseFloat(aux);
-                    escritura.setText("");
+                    String aux1="x";
+                    operations();
                     resultado.setText(aux+aux1);
-                    aux="";
                     operador=3;
                 } catch (NumberFormatException nfe){}
             }
@@ -187,12 +186,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     String aux=escritura.getText().toString();
-                    String aux1;
-                    aux1="÷";
-                    num1=Float.parseFloat(aux);
-                    escritura.setText("");
+                    String aux1="÷";
+                    operations();
                     resultado.setText(aux+aux1);
-                    aux="";
                     operador=4;
                 } catch (NumberFormatException nfe){}
             }
@@ -202,12 +198,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     String aux=escritura.getText().toString();
-                    String aux1;
-                    aux1="^";
-                    num1=Float.parseFloat(aux);
-                    escritura.setText("");
+                    String aux1="^";
+                    operations();
                     resultado.setText(aux+aux1);
-                    aux="";
                     operador=5;
                 } catch (NumberFormatException nfe){}
             }
@@ -216,8 +209,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    String aux1;
-                    aux1="√";
+                    String aux1="√";
                     resultado.setText((aux1)+"");
                     escritura.setText("");
                     operador=6;
@@ -229,22 +221,96 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     String aux=escritura.getText().toString();
-                    String aux1;
-                    aux1="%";
-                    num1=Float.parseFloat(aux);
-                    escritura.setText("");
+                    String aux1="%";
+                    operations();
                     resultado.setText(aux+aux1);
-                    aux="";
                     operador=7;
                 } catch (NumberFormatException nfe){}
             }
         });
+        seno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    String aux1 = "sin(";
+                    resultado.setText((aux1) + "");
+                    escritura.setText("");
+                    operador = 8;
+                } catch (NumberFormatException nfe) {}
+            }
+        });
 
+        coseno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    String aux1 = "cos(";
+                    resultado.setText((aux1) + "");
+                    escritura.setText("");
+                    operador = 9;
+                } catch (NumberFormatException nfe) {}
+            }
+        });
+
+        tangente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    String aux1 = "tan(";
+                    resultado.setText((aux1) + "");
+                    escritura.setText("");
+                    operador = 10;
+                } catch (NumberFormatException nfe) {}
+            }
+        });
+        logaritmo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    String aux1 = "log(";
+                    resultado.setText((aux1) + "");
+                    escritura.setText("");
+                    operador = 11;
+                } catch (NumberFormatException nfe) {}
+            }
+        });
+        phi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    double resFunction=Math.PI;
+                    String resFunc = Double.toString(resFunction);
+                    numFinal=Float.parseFloat(resFunc);
+                    escritura.setText((Math.round(numFinal * 10000.0) / 10000.0) + "");
+                    num1=numFinal;
+                } catch (NumberFormatException nfe) {}
+            }
+        });
         igual.setOnClickListener((new View.OnClickListener() {
-            public void  function(){
+
+            public void function() {
+                String aux = escritura.getText().toString();
+                String puntoCero = ".0";
+                String rNumFinal = Float.toString(numFinal);
+                rNumFinal = rNumFinal.toUpperCase();
+                String calPuntCero = rNumFinal.substring(rNumFinal.length() - 2);
+                if (calPuntCero.equals(puntoCero)) {
+                    rNumFinal = rNumFinal.substring(0, rNumFinal.length() - 2);
+                    escritura.setText(rNumFinal);
+                    numFinal = Float.parseFloat(rNumFinal);
+                } else {
+                    escritura.setText((Math.round(numFinal * 100.0) / 100.0) + "");
+                }
+                String res = resultado.getText().toString();
+                resultado.setText(res + aux);
+                numFinal = Integer.parseInt(rNumFinal);
+                num1 = numFinal;
+            }
+
+            public void operationsFunctions(){
                 String aux=escritura.getText().toString();
                 String puntoCero=".0";
-                String rNumFinal= Float.toString(numFinal);
+                String rNumFinal= Double.toString(resFunction);
                 rNumFinal = rNumFinal.toUpperCase();
                 String calPuntCero= rNumFinal.substring(rNumFinal.length()-2);
                 if (calPuntCero.equals(puntoCero)){
@@ -253,11 +319,20 @@ public class MainActivity extends AppCompatActivity {
                     numFinal=Float.parseFloat(rNumFinal);
                 }
                 else {
-                    escritura.setText((Math.round(numFinal*100.0)/100.0)+ "");
+                    escritura.setText((Math.round(numFinal * 100.0) / 100.0) + "");
                 }
                 String res=resultado.getText().toString();
                 resultado.setText(res+aux);
                 numFinal=Integer.parseInt(rNumFinal);
+                num1=numFinal;
+            }
+            public void oFunctions(){
+                String aux=escritura.getText().toString();
+                String resFunc = Double.toString(resFunction);
+                numFinal=Float.parseFloat(resFunc);
+                escritura.setText((Math.round(numFinal * 10000.0) / 10000.0) + "");
+                String res=resultado.getText().toString();
+                resultado.setText(res+aux+")");
                 num1=numFinal;
             }
             @Override
@@ -293,69 +368,36 @@ public class MainActivity extends AppCompatActivity {
                             function();
                         }
                     }
-                    else if ( operador == 5 ){
-                        double resFunction=Math.pow(num1,num2);
-                        String puntoCero=".0";
-                        String rNumFinal= Double.toString(resFunction);
-                        rNumFinal = rNumFinal.toUpperCase();
-                        String calPuntCero= rNumFinal.substring(rNumFinal.length()-2);
-                        if (calPuntCero.equals(puntoCero)){
-                            rNumFinal=rNumFinal.substring(0,rNumFinal.length()-2);
-                            escritura.setText(rNumFinal);
-                            numFinal=Float.parseFloat(rNumFinal);
-                        }
-                        else {
-                            escritura.setText((Math.round(numFinal*100.0)/100.0)+ "");
-                        }
-                        String res=resultado.getText().toString();
-                        resultado.setText(res+aux);
-                        numFinal=Integer.parseInt(rNumFinal);
-                        num1=numFinal;
+                    else if ( operador == 5 ) {
+                        resFunction = Math.pow(num1, num2);
+                        operationsFunctions();
                     }
                     else if ( operador == 6 ){
-
-                        double resFunction=Math.sqrt(num2);
-                        String puntoCero=".0";
-                        String rNumFinal= Double.toString(resFunction);
-                        rNumFinal = rNumFinal.toUpperCase();
-                        String calPuntCero= rNumFinal.substring(rNumFinal.length()-2);
-                        if (calPuntCero.equals(puntoCero)){
-                            rNumFinal=rNumFinal.substring(0,rNumFinal.length()-2);
-                            escritura.setText(rNumFinal);
-                            numFinal=Float.parseFloat(rNumFinal);
-                        }
-                        else {
-                            escritura.setText((Math.round(numFinal*100.0)/100.0)+ "");
-                        }
-                        String res=resultado.getText().toString();
-                        resultado.setText(res+aux);
-                        numFinal=Integer.parseInt(rNumFinal);
-                        num1=numFinal;
-
+                        resFunction=Math.sqrt(num2);
+                        operationsFunctions();
                     }
                     else if ( operador == 7 ){
-
-                        double resFunction=((num1*num2)/100);
-                        String puntoCero=".0";
-                        String rNumFinal= Double.toString(resFunction);
-                        rNumFinal = rNumFinal.toUpperCase();
-                        String calPuntCero= rNumFinal.substring(rNumFinal.length()-2);
-                        if (calPuntCero.equals(puntoCero)){
-                            rNumFinal=rNumFinal.substring(0,rNumFinal.length()-2);
-                            escritura.setText(rNumFinal);
-                            numFinal=Float.parseFloat(rNumFinal);
-                        }
-                        else {
-                            escritura.setText((Math.round(numFinal*100.0)/100.0)+ "");
-                        }
-                        String res=resultado.getText().toString();
-                        resultado.setText(res+aux);
-                        numFinal=Integer.parseInt(rNumFinal);
-                        num1=numFinal;
+                        resFunction=((num1*num2)/100);
+                        operationsFunctions();
+                    }
+                    else if (operador == 8){
+                        resFunction=Math.sin(num2);
+                        oFunctions();
+                    }
+                    else if (operador == 9){
+                        resFunction=Math.cos(num2);
+                        oFunctions();
+                    }
+                    else if (operador == 10){
+                        resFunction=Math.tan(num2);
+                        oFunctions();
+                    }
+                    else if (operador == 11){
+                        resFunction=Math.log(num2);
+                        oFunctions();
                     }
                 } catch (NumberFormatException nfe){}
             }
         }));
-
     }
 }
