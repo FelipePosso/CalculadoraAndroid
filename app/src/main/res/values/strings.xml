@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Calculadora</string>
+    <!--Texto en botones-->
+    <string name="sin">SIN</string>
+    <string name="cos">COS</string>
+    <string name="tan">TAN</string>
+    <string name="log">LOG</string>
+    <string name="phi">π</string>
+    <string name="pow">^</string>
+    <string name="sqrt">√</string>
+    <string name="igual">=</string>
+    <string name="porcentaje">%</string>
+    <string name="borrar">←</string>
+    <string name="dividir">÷</string>
+    <string name="multiplicar">x</string>
+    <string name="restar">-</string>
+    <string name="sumar">+</string>
+    <string name="punto">.</string>
+    <string name="uno">1</string>
+    <string name="dos">2</string>
+    <string name="tres">3</string>
+    <string name="cuatro">4</string>
+    <string name="cinco">5</string>
+    <string name="seis">6</string>
+    <string name="siete">7</string>
+    <string name="ocho">8</string>
+    <string name="nueve">9</string>
+    <string name="cero">0</string>
+    <string name="factorial">!</string>
 </resources>

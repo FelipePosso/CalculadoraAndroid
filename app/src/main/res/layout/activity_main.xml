@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#0D2526">
 
-    //Resultado
+    <!--//Resultado-->
 
     <LinearLayout
         android:layout_margin="5dp"
@@ -23,7 +23,7 @@
             android:layout_height="120dp"/>
     </LinearLayout>
 
-    //Conteo
+    <!--//Conteo-->
 
     <LinearLayout
         android:layout_margin="5dp"
@@ -39,82 +39,89 @@
             android:textColor="#CCCCCC"
             android:layout_height="30dp"/>
     </LinearLayout>
-    //functions
+    <!--//functions-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
+            style="?android:attr/buttonBarButtonStyle"
             android:id="@+id/seno"
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="#0B3436"
             android:padding="5dp"
-            android:text="sin"
+            android:text="@string/sin"
             android:textColor="#C3C3C3"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
         <Button
+            style="?android:attr/buttonBarButtonStyle"
             android:id="@+id/coseno"
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="#0B3436"
             android:padding="5dp"
-            android:text="cos"
+            android:text="@string/cos"
             android:textColor="#C3C3C3"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
         <Button
+            style="?android:attr/buttonBarButtonStyle"
             android:id="@+id/tangente"
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="#0B3436"
             android:padding="5dp"
-            android:text="tan"
+            android:text="@string/tan"
             android:textColor="#C3C3C3"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
         <Button
+            style="?android:attr/buttonBarButtonStyle"
             android:id="@+id/logaritmo"
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="#0B3436"
             android:padding="5dp"
-            android:text="log"
+            android:text="@string/log"
             android:textColor="#C3C3C3"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
         <Button
+            style="?android:attr/buttonBarButtonStyle"
             android:id="@+id/phi"
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:layout_weight="1"
             android:background="#0B3436"
             android:padding="5dp"
-            android:text="π"
+            android:text="@string/phi"
             android:textColor="#C3C3C3"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
-        //functions1
+        <!--//functions1-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/potencia"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_weight="1"
-                android:text="^"
+                android:text="@string/pow"
                 android:background="#1D5657"
                 android:textColor="#C3C3C3"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/raiz"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
@@ -122,10 +129,11 @@
                 android:background="#1D5657"
                 android:textColor="#C3C3C3"
                 android:textStyle="bold"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"
-                android:text="√" />
+                android:text="@string/sqrt" />
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/porcentaje"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
@@ -133,189 +141,206 @@
                 android:background="#1D5657"
                 android:textColor="#C3C3C3"
                 android:textStyle="bold"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"
                 android:text="%" />
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/borrar"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:background="#1D5657"
                 android:padding="5dp"
-                android:text="←"
+                android:text="@string/borrar"
                 android:textColor="#C3C3C3"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        //segunda fila
+        <!--//segunda fila-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/b7"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="7"
+                android:text="@string/siete"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/b8"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="8"
+                android:text="@string/ocho"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/b9"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="9"
+                android:text="@string/nueve"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
+
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/dividir"
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="÷"
-                android:textColor="#C3C3C3"
+                android:layout_weight="1"
                 android:background="#1D5657"
-                android:textSize="30dp"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:text="@string/dividir"
+                android:textColor="#C3C3C3"
+                android:textSize="30sp" />
         </LinearLayout>
 
-        //tercer fila
+        <!--//tercer fila-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/b4"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="4"
+                android:text="@string/cuatro"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/b5"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="5"
+                android:text="@string/cinco"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/b6"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="6"
+                android:text="@string/seis"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/multiplicar"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="x"
+                android:text="@string/multiplicar"
                 android:textColor="#C3C3C3"
                 android:background="#1D5657"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
         </LinearLayout>
 
-        //cuarta fila
+        <!--//cuarta fila-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/b1"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="1"
+                android:text="@string/uno"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/b2"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="2"
+                android:text="@string/dos"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/b3"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="3"
+                android:text="@string/tres"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/restar"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="-"
+                android:text="@string/restar"
                 android:textColor="#C3C3C3"
                 android:background="#1D5657"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
         </LinearLayout>
 
-        //ultima fila
+        <!--//ultima fila-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/b0"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_weight="1"
-                android:text="0"
+                android:text="@string/cero"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/bPunto"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="."
+                android:text="@string/punto"
                 android:textColor="#C3C3C3"
                 android:background="#1A4B4C"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"/>
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/igual"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
@@ -323,19 +348,20 @@
                 android:background="#1A4B4C"
                 android:textColor="#C3C3C3"
                 android:textStyle="bold"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:padding="5dp"
-                android:text="=" />
+                android:text="@string/igual" />
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/sumar"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:background="#1D5657"
                 android:padding="5dp"
-                android:text="+"
+                android:text="@string/sumar"
                 android:textColor="#C3C3C3"
-                android:textSize="30dp" />
+                android:textSize="30sp" />
         </LinearLayout>
     </LinearLayout>
 

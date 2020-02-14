@@ -7,5 +7,40 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <!--Línea funciones matemáticas-->
+    <style name="funciones">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">#163F41</item>
+        <item name="android:textColor">#C3C3C3</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <!--Línea Buttons Funcionales-->
+    <style name="buttonsFuncionales">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">#2A7579</item>
+        <item name="android:textColor">#C3C3C3</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <!--Línea Operaciones Básicas-->
+    <style name="operacionesBasicas">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">#20595C</item>
+        <item name="android:textColor">#C3C3C3</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <!--Línea Números 0-->
+    <style name="numeros">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">#0D2526</item>
+        <item name="android:textColor">#C3C3C3</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>
