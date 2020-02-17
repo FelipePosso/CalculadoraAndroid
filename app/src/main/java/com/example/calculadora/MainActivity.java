@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,bPunto;
     Button sumar,restar,multiplicar,dividir,igual;
     Button potencia,raiz,porcentaje,borrar;
-    Button seno,coseno,tangente,logaritmo,phi;
-    float numFinal,num1,num2;
+    Button seno,coseno,tangente,logaritmo,phi,factorial;
+    float numFinal,num1,num2,fac;
     int operador;
     double resFunction;
 
@@ -23,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
         num1=Float.parseFloat(aux);
         escritura.setText("");
         aux="";
+    }
+
+    public float calFactorial(float num2){
+        if(num2 <= 0){
+            return 1;
+        }else {
+            return (num2*calFactorial(num2-1));
+        }
     }
 
     @Override
@@ -58,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         tangente= findViewById(R.id.tangente);
         logaritmo= findViewById(R.id.logaritmo);
         phi= findViewById(R.id.phi);
+        factorial= findViewById(R.id.factorial);
+
 
         if(escritura.getText().equals("") || resultado.equals("")){
             escritura.setText("");
@@ -120,8 +130,7 @@ public class MainActivity extends AppCompatActivity {
             if (aux.contains(".")){
                 try {} catch (NumberFormatException nfe){}
             }
-            else {
-                escritura.setText(aux+".");  }
+            else { escritura.setText(aux+".");  }
             }});
 
         borrar.setOnClickListener(new View.OnClickListener() {
@@ -132,8 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     if (!aux.isEmpty()) {
                         aux=aux.substring(0,aux.length()-1);
                         escritura.setText(aux); }
-                } catch (NumberFormatException nfe){
-                    System.out.println("error: " + nfe);}
+                } catch (NumberFormatException nfe){}
             }
         });
         borrar.setOnLongClickListener(new View.OnLongClickListener() {
@@ -288,6 +296,18 @@ public class MainActivity extends AppCompatActivity {
                 } catch (NumberFormatException nfe) {}
             }
         });
+        factorial.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                try {
+                    String aux1 = "!";
+                    resultado.setText((aux1) + "");
+                    escritura.setText("");
+                    operador = 12;
+                } catch (NumberFormatException nfe) {}
+            }
+        });
         igual.setOnClickListener((new View.OnClickListener() {
 
             public void function() {
@@ -337,12 +357,13 @@ public class MainActivity extends AppCompatActivity {
                 resultado.setText(res+aux+")");
                 num1=numFinal;
             }
+
             @Override
             public void onClick(View v) {
+
                 try {
                     String aux=escritura.getText().toString();
                     num2=Float.parseFloat(aux);
-                    System.out.println(num2);
                     if ( operador ==1 ){
                         numFinal = num1+num2;
                         function();
@@ -398,8 +419,14 @@ public class MainActivity extends AppCompatActivity {
                         resFunction=Math.log(num2);
                         oFunctions();
                     }
+                    else if (operador == 12) {
+                        fac=calFactorial(num2);
+                        resFunction=fac;
+                        operationsFunctions();
+                    }
                 } catch (NumberFormatException nfe){}
             }
+
         }));
     }
 }
